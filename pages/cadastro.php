@@ -141,7 +141,9 @@
         }
 
         .required {
-            width: 400px;
+            display: flex;
+            flex-flow: nowrap column;
+            width: 20vw;
             height: 400px;
             margin: 100px 0px 0px 200px;
             background-color: var(--red);
@@ -167,6 +169,12 @@
             color: var(--white);
             text-align: center;
             list-style-type: circle;
+        }
+
+        @media screen and (max-width: 1790px){
+            .required {
+                height: 350px;
+            }
         }
 
     </style>
