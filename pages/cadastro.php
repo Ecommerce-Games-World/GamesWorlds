@@ -31,8 +31,9 @@
             flex-flow: nowrap row;
             justify-content: space-between;
             
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
+            min-height: 900px;
 
         }
 
@@ -44,30 +45,33 @@
         } 
     
         aside img {
-            margin: 50px auto auto 200px;
+            margin: 50px 0 0 7vw;
         }
     
         .login {
             display: flex;
             flex-flow: nowrap column;
             
-            width: 100vw;
-            max-width: 600px;
-            height: 870px;
-            margin: auto 200px;
-            
-            padding: 60px 100px;
+            width: 30vw;
+            height: 90vh;
+            min-height: 870px;
+            margin: auto;
             
             color: var(--white);
             background-color: var(--red);
             border-radius: 30px;
+        }
+
+        .espacamentoLogo {
+            display: flex;
+            justify-content: left;
+            margin: 60px 0px 30px 15%;
         }
         
         .containerLogo {
             display: grid;
             grid-template: repeat(2, 1fr) / 50px 1fr;
             gap: 3px;
-            margin-bottom: 30px;
         }
 
         .containerLogo img {
@@ -75,15 +79,19 @@
         }
  
         .formCadastro {
-            display: grid;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 17px;
             position: relative;
         }
         
         .formCadastro input {
-            width: 400px;
+            width: 20vw;
             padding: 10px 5px 10px 30px;
-            margin: 10px 0;
-            
+            /* margin: 10px 0; */
+
             border: none;
             border-radius: 20px;
         }
@@ -96,8 +104,8 @@
 
         .formCadastro div > label {
             position: absolute;
-            bottom: 42px;
-            left: 20px;
+            bottom: 75%;
+            left: 5%;
 
             width: 70px;
             padding: 2px;
@@ -144,7 +152,7 @@
             display: flex;
             flex-flow: nowrap column;
             width: 20vw;
-            height: 400px;
+            min-height: 450px;
             margin: 100px 0px 0px 200px;
             background-color: var(--red);
             border-radius: 20px;
@@ -187,49 +195,52 @@
                 <h2>Requisitos do Cadastro</h2>
                 <ul>
                     <li>Nome no minimo 5 caracteres</li>
-                    <li>Senha deve ter simbolos (@, !, $, %, &...) </li>
-                    <li>Senha deve ter letra Maiuscula (A-Z)</li>
-                    <li>Senha deve ter letra Minuscula (a-z)</li>
+                    <li>Senha deve ter simbolos<br>(@, !, $, %, &...) </li>
+                    <li>Senha deve ter letra Maiuscula<br>(A-Z)</li>
+                    <li>Senha deve ter letra Minuscula<br>(a-z)</li>
                 </ul>
             </div>
         </aside>
 
         <div class="login">
-            <div class="containerLogo">
-                <img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;">
-                <h2>SHAW!!!</h2>
-                <p>Faça aqui seu Cadastro</p>
+            <div class="espacamentoLogo">
+                <div class="containerLogo">
+                    <img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;">
+                    <h2>SHAW!!!</h2>
+                    <p>Faça aqui seu Cadastro</p>
+                </div>
             </div>
 
             <form action="validar.php" class="formCadastro">
                 <div>
                     <label for="nomeCadastro">Nome</label>
-                    <input type="text" name="nomeCadastro" id="nomeCadastro">
+                    <input type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Ronaldo">
                 </div>
                 
                 <div>
                     <label for="emailCadastro">Email</label>
-                    <input type="email" name="emailCadastro" id="emailCadastro">
+                    <input type="email" name="emailCadastro" id="emailCadastro" placeholder="abcde@gmail.com">
                 </div>
                 <div>
                     <label for="telefoneCadastro">Telefone</label>
-                    <input type="tel" name="telefoneCadastro" id="telefoneCadastro">
+                    <input type="tel" name="telefoneCadastro" id="telefoneCadastro" placeholder="11 1234-5678">
                 </div>
                 <div>
                     <label for="cep">CEP</label for="">
-                    <input type="text" name="cep" id="cep">
+                    <input type="text" name="cep" id="cep" placeholder="12345-678">
                 </div>
                 <div>
                     <label for="senhaCadastro">Senha</label>
-                    <input type="password" name="senhaCadastro" id="senhaCadastro">
+                    <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="******">
                 </div>
                 <div>
                     <label for="confirmarSenha" style="width: 125px;">Confirmar Senha</label>
-                    <input type="password" name="confirmarSenha" id="confirmarSenha">
+                    <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="******">
                 </div>
                 <button class="register">Cadastrar</button>
+                <a href="login.php">Já tenho uma conta</a>
             </form>
-            <a href="login.php">Já tenho uma conta</a>
+            
         </div>
     </div>
     <footer>

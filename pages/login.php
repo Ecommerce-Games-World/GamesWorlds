@@ -32,9 +32,9 @@
             flex-flow: nowrap row;
             justify-content: space-between;
             
-            width: 100vw;
-            height: 100vh;
-
+            width: 100%;
+            height: 100%;
+            min-height: 900px;
         }
 
         aside {
@@ -45,7 +45,7 @@
         } 
     
         aside img {
-            margin: 50px auto auto 200px;
+            margin: 50px 0 0 7vw;
         }
     
         .login {
@@ -55,20 +55,23 @@
             width: 100vw;
             max-width: 600px;
             height: 650px;
-            margin: auto 200px;
-            
-            padding: 100px;
+            margin: auto;
             
             color: var(--white);
             background-color: var(--red);
             border-radius: 30px;
+        }
+
+        .espacamentoLogo {
+            display: flex;
+            justify-content: left;
+            margin: 60px 0px 50px 15%;
         }
         
         .containerLogo {
             display: grid;
             grid-template: repeat(2, 1fr) / 50px 1fr;
             gap: 3px;
-            margin-bottom: 50px;
         }
 
         .containerLogo img {
@@ -76,14 +79,19 @@
         }
  
         .formLogin {
-            display: grid;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+
             position: relative;
         }
         
         .formLogin input {
-            width: 400px;
+            width: 20vw;
+            min-width: 400px;
             padding: 10px 5px 10px 30px;
-            margin: 10px 0;
             
             border: none;
             border-radius: 20px;
@@ -97,8 +105,8 @@
 
         .formLogin div > label {
             position: absolute;
-            bottom: 42px;
-            left: 20px;
+            bottom: 75%;
+            left: 5%;
 
             width: 70px;
             padding: 2px;
@@ -113,13 +121,18 @@
         .entrar {
             width: 200px;
             padding: 12px;
-            margin: 50px auto;
 
             color: var(--white);
             background-color: var(--black);
 
             border: none;
             border-radius: 20px;
+        }
+
+        .containerLink {
+            display: flex;
+            flex-flow: nowrap column;
+            margin-top: 60px;
         }
 
         .entrar:hover {
@@ -150,10 +163,12 @@
         </aside>
         
         <div class="login">
-            <div class="containerLogo">
-                <img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;">
-                <h2>Games Worlds</h2>
-                <p>Faça seu Login</p>
+            <div class="espacamentoLogo">
+                <div class="containerLogo">
+                    <img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;">
+                    <h2>Games Worlds</h2>
+                    <p>Faça seu Login</p>
+                </div>
             </div>
             <form action="" method="post" class="formLogin">
                 <div>
@@ -165,9 +180,12 @@
                     <input type="password" name="senhaUsuario" id="senhaUsuario">
                 </div>
                 <button class="entrar">Entrar</button>
+                
             </form>
-            <a href="cadastro.php">Ainda não tenho uma conta. Cadastrar-se</a>
-            <a href="esqueci_senha.php">Esqueci a Senha.</a>
+            <div class="containerLink">
+                <a href="cadastro.php">Ainda não tenho uma conta. Cadastrar-se</a>
+                <a href="esqueci_senha.php">Esqueci a Senha.</a>
+            </div>
         </div>
     </div>
     <footer>

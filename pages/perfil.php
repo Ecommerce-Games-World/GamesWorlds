@@ -10,6 +10,72 @@
     <link rel="stylesheet" href="../css/desktop.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     
+    <style>
+        :root {
+
+            /* Cores */
+            --red: #D31621;
+            --white: #FAF3E9; 
+            --gray: #D9D9D9;
+            --black: #190709;
+            --beige: #E7B59D;
+
+            /* Fontes */
+            /* 
+            --inter: ;
+            --interBold: ;
+            --interBlack:;
+            */
+        }
+
+        nav div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 250px;
+            height: 200px;
+            margin: 10px 20px 40px 20px;
+
+            color: white;
+            background: black url(../Assets/images/Dead_BY_Daylight_IMAGE_jpg.jpg) no-repeat center center / cover;
+            opacity: 65%;
+            border: 1px solid white;
+            border-radius: 20px;
+        }
+
+        nav div:hover { 
+            transform: scale(1.1);
+            opacity: 100%;
+            border: none;
+        }
+
+        div p {
+            opacity: 100%;
+        }
+
+        .category h2,
+        .recommend h2,
+        .previouslySeen h2 {
+            display: block;
+
+            width: 350px;
+            margin-bottom: 40px;
+            padding: 15px;
+
+            border-bottom: 1px solid var(--red);
+        }
+
+        .category nav,
+        .recommend nav,
+        .previouslySeen nav{
+            display: flex;
+            flex-flow: nowrap row;
+
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    </style>    
 </head>
 <body>
     <header>
