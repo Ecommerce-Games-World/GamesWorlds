@@ -58,7 +58,8 @@
             display: flex;
             flex-flow: nowrap column;
             
-            width: 30vw;
+            width: 50vw;
+            max-width: 550px;
             height: 90vh;
             min-height: 870px;
             margin: auto;
@@ -99,7 +100,8 @@
         
         /* Inputs do formulário */
         .formCadastro input {
-            width: 20vw;
+            width: 50vw;
+            max-width: 380px;
             padding: 10px 5px 10px 30px;
             /* margin: 10px 0; */
 
@@ -168,6 +170,7 @@
             display: flex;
             flex-flow: nowrap column;
             width: 20vw;
+            min-width: 310px;
             min-height: 450px;
             margin: 100px 0px 0px 200px;
             background-color: var(--red);
@@ -196,7 +199,6 @@
         }
 
         /* MOBILE */
-
         @media screen and (min-width: 0px) and (max-width: 767px){
             body {
                 background-color: var(--black);
@@ -215,6 +217,55 @@
             /* Inputs do formulário */
             .formCadastro input {
                 width: 60vw;
+            }
+        }
+
+        /* TABLETS */
+        @media screen and (min-width: 768px) and (max-width: 1084px){
+
+            /* Fundo Lateral */
+            aside {
+                width: 60vw;
+            } 
+        
+            /* Div do cadastro completo */
+            .login {
+                width: 70vw;
+                min-width: 600px;
+                margin-right: 50px;
+            }
+
+            /* Espaçamento entre o texto e imagem em relação a div */
+            .espacamentoLogo {
+                display: flex;
+                justify-content: left;
+                margin: 60px 0px 30px 15%;
+            }
+
+            /* Formulário do cadastro, organizando as informações */
+            .formCadastro {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 17px;
+                position: relative;
+            }
+
+            /* Inputs do formulário */
+            .formCadastro input {
+                width: 40vw;
+                min-width: 380px;
+                padding: 10px 5px 10px 30px;
+                /* margin: 10px 0; */
+
+                border: none;
+                border-radius: 20px;
+            }
+
+            /* Requisitos para o cadastro */
+            .required {
+                display: none;
             }
         }
     </style>

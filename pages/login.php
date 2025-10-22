@@ -68,6 +68,11 @@
             border-radius: 30px;
         }
 
+        @media screen and (min-width: 1084px) {
+            .login {
+                margin-right: 10%;
+            }
+        }
         /* Espaçamento da logo e texto em relação a div */
         .espacamentoLogo {
             display: flex;
@@ -193,6 +198,46 @@
             }
         }
 
+        /* TABLET */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            /* Fundo Lateral */
+            aside {
+                width: 60vw;
+            } 
+        
+            /* Div do cadastro completo */
+            .login {
+                width: 70vw;
+                min-width: 600px;
+                margin-right: 50px;
+            }
+
+            /* Espaçamento entre o texto e imagem em relação a div */
+            .espacamentoLogo {
+                display: flex;
+                justify-content: left;
+                margin: 60px 0px 30px 15%;
+            }
+
+            /* Formulário do cadastro, organizando as informações */
+            .formLogin {
+                justify-content: center;
+                align-items: center;
+                gap: 17px;
+                position: relative;
+            }
+
+            /* Inputs do formulário */
+            .formLogin input {
+                width: 40vw;
+                padding: 10px 5px 10px 30px;
+            }
+
+            /* Requisitos para o cadastro */
+            .required {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -234,8 +279,5 @@
             </div>
         </div>
     </div>
-    <footer>
-
-    </footer>
 </body>
 </html>
