@@ -6,6 +6,8 @@
     <title>GamesWorlds</title>
     <link rel="shortcut icon" href="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/desktop.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/mobile.css">
     
     <style>
         :root {
@@ -26,6 +28,7 @@
             
         }
         
+        /* Organizar todo o site */
         .container {
             display: flex;
             flex-flow: nowrap row;
@@ -37,6 +40,7 @@
 
         }
 
+        /* Fundo Lateral */
         aside {
             width: 50vw;
             margin: 0;    
@@ -44,10 +48,12 @@
             clip-path: ellipse(80% 100% at 10% 50%);
         } 
     
+        /* icone do site */
         aside img {
             margin: 50px 0 0 7vw;
         }
     
+        /* Div do cadastro completo */
         .login {
             display: flex;
             flex-flow: nowrap column;
@@ -62,22 +68,26 @@
             border-radius: 30px;
         }
 
+        /* Espaçamento entre o texto e imagem em relação a div */
         .espacamentoLogo {
             display: flex;
             justify-content: left;
             margin: 60px 0px 30px 15%;
         }
         
+        /* Posição da logo e texto */
         .containerLogo {
             display: grid;
             grid-template: repeat(2, 1fr) / 50px 1fr;
             gap: 3px;
         }
 
-        .containerLogo img {
+        /* Posição da imagem no grid */
+        .containerLogo a {
             grid-area: 1 / 1 / 3 / 2;
         }
  
+        /* Formulário do cadastro, organizando as informações */
         .formCadastro {
             display: flex;
             flex-flow: column nowrap;
@@ -87,6 +97,7 @@
             position: relative;
         }
         
+        /* Inputs do formulário */
         .formCadastro input {
             width: 20vw;
             padding: 10px 5px 10px 30px;
@@ -96,12 +107,13 @@
             border-radius: 20px;
         }
         
-
+        /* Div para fazer um legend improvisado */
         .formCadastro div {
             position: relative;
             margin: 15px auto;
         }
 
+        /* Legend improvisado */
         .formCadastro div > label {
             position: absolute;
             bottom: 75%;
@@ -117,6 +129,7 @@
             border-radius: 20px;
         }
 
+        /* Botão para registrar */
         .register {
             width: 200px;
             padding: 12px;
@@ -129,6 +142,7 @@
             border-radius: 20px;
         }
 
+        /* Animação ao passar o mouse em cima do botão de registrar */
         .register:hover {
             color: var(--black);
             background-color: var(--white);
@@ -137,6 +151,7 @@
             cursor: pointer;
         }
 
+        /* Links */
         a {
             color: var(--white);
             text-align: center;
@@ -148,6 +163,7 @@
             cursor: pointer;
         }
 
+        /* Requisitos para o cadastro */
         .required {
             display: flex;
             flex-flow: nowrap column;
@@ -179,18 +195,37 @@
             list-style-type: circle;
         }
 
-        @media screen and (max-width: 1790px){
-            .required {
-                height: 350px;
+        /* MOBILE */
+
+        @media screen and (min-width: 0px) and (max-width: 767px){
+            body {
+                background-color: var(--black);
+            }
+
+            /* Fundo Lateral */
+            aside {
+                display: none;
+            } 
+        
+            /* Div do cadastro completo */
+            .login {
+                width: 85vw;
+            }
+        
+            /* Inputs do formulário */
+            .formCadastro input {
+                width: 60vw;
             }
         }
-
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Fundo Lateral -->
         <aside>        
             <a href="main.php"><img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand"></a>
+
+            <!-- Requisitos para o Cadastro -->
             <div class="required">
                 <h2>Requisitos do Cadastro</h2>
                 <ul>
@@ -205,12 +240,13 @@
         <div class="login">
             <div class="espacamentoLogo">
                 <div class="containerLogo">
-                    <img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;">
+                    <a href="main.php"><img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;"></a>
                     <h2>SHAW!!!</h2>
                     <p>Faça aqui seu Cadastro</p>
                 </div>
             </div>
 
+            <!-- Formulário de Cadastro -->
             <form action="validar.php" class="formCadastro">
                 <div>
                     <label for="nomeCadastro">Nome</label>
@@ -238,13 +274,12 @@
                     <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="******">
                 </div>
                 <button class="register">Cadastrar</button>
+
+                <!-- Voltar para tela de Login -->
                 <a href="login.php">Já tenho uma conta</a>
             </form>
             
         </div>
     </div>
-    <footer>
-
-    </footer>
 </body>
 </html>

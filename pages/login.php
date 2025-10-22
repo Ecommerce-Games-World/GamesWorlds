@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesWorlds</title>
     <link rel="shortcut icon" href="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/desktop.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="../css/desktop.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/mobile.css">
     
     <style>
         :root {
@@ -27,6 +29,7 @@
             
         }
         
+        /* Organizar todo o site */
         .container {
             display: flex;
             flex-flow: nowrap row;
@@ -37,6 +40,7 @@
             min-height: 900px;
         }
 
+        /* Fundo Lateral */
         aside {
             width: 50vw;
             margin: 0;    
@@ -44,10 +48,12 @@
             clip-path: ellipse(80% 100% at 10% 50%);
         } 
     
+        /* icone do site */
         aside img {
             margin: 50px 0 0 7vw;
         }
     
+        /* Div do Login completo */
         .login {
             display: flex;
             flex-flow: nowrap column;
@@ -62,22 +68,26 @@
             border-radius: 30px;
         }
 
+        /* Espaçamento da logo e texto em relação a div */
         .espacamentoLogo {
             display: flex;
             justify-content: left;
             margin: 60px 0px 50px 15%;
         }
-        
+    
+        /* Organização da logo e texto */
         .containerLogo {
             display: grid;
             grid-template: repeat(2, 1fr) / 50px 1fr;
             gap: 3px;
         }
 
-        .containerLogo img {
+        /* Posição da imagem no grid */
+        .containerLogo a {
             grid-area: 1 / 1 / 3 / 2;
         }
- 
+
+        /* Formulário de login, alinhando os elementos */
         .formLogin {
             display: flex;
             flex-flow: column nowrap;
@@ -87,7 +97,8 @@
 
             position: relative;
         }
-        
+
+        /* Input do Formulário */
         .formLogin input {
             width: 20vw;
             min-width: 400px;
@@ -97,12 +108,13 @@
             border-radius: 20px;
         }
         
-
+        /* Div para fazer um legend improvisado */
         .formLogin div {
             position: relative;
             margin: 15px auto;
         }
 
+        /* Legend Improvisado */
         .formLogin div > label {
             position: absolute;
             bottom: 75%;
@@ -118,6 +130,7 @@
             border-radius: 20px;
         }
 
+        /* Botão para enviar o formulário */
         .entrar {
             width: 200px;
             padding: 12px;
@@ -129,12 +142,7 @@
             border-radius: 20px;
         }
 
-        .containerLink {
-            display: flex;
-            flex-flow: nowrap column;
-            margin-top: 60px;
-        }
-
+        /* animação de passar o mouse encima do botão */
         .entrar:hover {
             color: var(--black);
             background-color: var(--white);
@@ -143,6 +151,14 @@
             cursor: pointer;
         }
 
+        /* Organizando a posição do recuperar senha e cadastro */
+        .containerLink {
+            display: flex;
+            flex-flow: nowrap column;
+            margin-top: 60px;
+        }
+
+        /* Personalizando os links */
         a {
             color: var(--white);
             text-align: center;
@@ -154,22 +170,50 @@
             cursor: pointer;
         }
 
-        </style>
+        /* MOBILE */
+        @media screen and (min-width: 0px) and (max-width: 767px){
+            body {
+                background-color: var(--black);
+            }
+
+            /* Organizar todo o site */
+            .container {
+                justify-content: center;
+            }
+
+            /* Lateral */
+            aside {
+                display: none;
+            }
+
+            /* Div do Login completo */
+            .login {
+                width: 75vw;
+                min-width: 450px;
+            }
+        }
+
+    </style>
 </head>
 <body>
+    
     <div class="container">
+        <!-- Fundo Lateral -->
         <aside>
             <a href="main.php"><img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand"></a>
         </aside>
         
+        <!-- Div em volta do login -->
         <div class="login">
             <div class="espacamentoLogo">
                 <div class="containerLogo">
-                    <img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;">
+                    <a href="main.php"><img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;"></a>
                     <h2>Games Worlds</h2>
                     <p>Faça seu Login</p>
                 </div>
             </div>
+
+            <!-- Formulário de Login -->
             <form action="" method="post" class="formLogin">
                 <div>
                     <label for="nomeUsuario">Nome</label>
@@ -182,9 +226,11 @@
                 <button class="entrar">Entrar</button>
                 
             </form>
+
+            <!-- Links de cadastro e esqueci a senha -->
             <div class="containerLink">
                 <a href="cadastro.php">Ainda não tenho uma conta. Cadastrar-se</a>
-                <a href="esqueci_senha.php">Esqueci a Senha.</a>
+                <a href="esqueciSenha.php">Esqueci a Senha.</a>
             </div>
         </div>
     </div>

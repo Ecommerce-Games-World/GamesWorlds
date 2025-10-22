@@ -2,6 +2,46 @@
 
 /* Mobile */
 
-@media screen and (max-width) {
-    
+@media screen and (min-width: 0px) and (max-width: 767px) {
+
+    /* Fonte para Titulos */
+    h2 {
+        font-size: 18px;
+    }
+
+    /* Logo da Empresa */
+    .storeBrand {
+        width: 40px;
+        height: 40px;
+        opacity: 100%;
+    }
+
+    /* Barra de pesquisa */
+    .inputWrapper {
+        max-width: 250px;
+        height: 40px;
+    }
+
+    /* Icone de Carrinho, cor e tamanho*/
+    .fi-rr-shopping-cart {
+        display: none;
+    }
+
+    /* Botão para a tela de Login */
+    .loginRegister {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+    }
+
+    .loginRegister span {
+        display: none;
+    }
+
+    /* Conteúdo Principal */
+    main {
+        padding: 20px 30px;
+    }
+
 }

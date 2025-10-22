@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
+/* Fonte BBHSansHegarty */
 @font-face {
     font-family: 'BBHSansHegarty';
     src: url('..//Assets/fonts/BBH_Sans_Hegarty/BBHSansHegarty-Regular.ttf') format('truetype');
     font-weight: bold;
 }
 
+/* Fonte Inter */
 @font-face {
     font-family: 'Inter';
     src: url('..//Assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
 }
 
+/* Fonte PlusJakartaSans */
 @font-face {
     font-family: 'PlusJakartaSans';
     src: url('../Assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
@@ -31,35 +34,42 @@
 
 }
 
+/* Configurações Globais */
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
+/* Ajuste de tela no HTML e Body */
 html, body {
     height: 100%;
 }
 
+/* Cor de Fundo */
 body {
     width: 100%;
     background-color: var(--white);
 }
 
+/* Fonte para Titulos */
 h2 {
     font-family: 'Inter';
     font-size: 24px;
 }
 
+/* Fontes para textos */
 p, button, input, label, li, a {
     font-family: 'PlusJakartaSans';
     font-size: 16px;
 }
 
+/* Tamanho do Header */
 header {
     height: 300px;
 }
 
+/* Container dos itens do Header ( Logo, barra de pesquisa, carrinho e cadastrar usuário) */
 header .container {
     display: flex;
     flex-flow: nowrap row;
@@ -73,6 +83,7 @@ header .container {
     margin-top: 25px;
 }
 
+/* Logo da Empresa */
 .storeBrand {
     width: 50px;
     height: 50px;
@@ -84,6 +95,7 @@ header .container {
     opacity: 90%;
 }
 
+/* Barra de pesquisa */
 .inputWrapper {
     display: flex;
     flex-flow: nowrap row;
@@ -99,10 +111,12 @@ header .container {
     cursor: pointer;
 }
 
+/* Icone da Barra de pesquisa */
 .inputWrapper i {
     color: var(--white);
 }
 
+/* Input da Barra de pesquisa */
 .inputWrapper input {
     width: 100%;
     padding: 10px 20px;
@@ -114,15 +128,18 @@ header .container {
     border: none; 
 }
 
+/* Removendo linhas de cotorno do input da Barra de pesquisa */
 .inputWrapper input:focus-visible {
     outline: none;
 }
 
+/* Icone de Carrinho, cor e tamanho*/
 .fi-rr-shopping-cart {
     color: var(--red);
     font-size: 30px;
 }
 
+/* Botão para a tela de Login */
 .loginRegister {
     width: 200px;
     height: 40px;
@@ -130,6 +147,7 @@ header .container {
     color: var(--white);
     background-color: var(--black);
 
+    border: none;
     border-radius: 20px;
     z-index: -1;
 }
@@ -138,6 +156,7 @@ header .container {
     transform: scale(1.1);
 }
 
+/* Conteúdo Principal */
 main {
     width: 100vw;
     max-width: 100%;
