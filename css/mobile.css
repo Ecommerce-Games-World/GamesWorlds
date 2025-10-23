@@ -23,7 +23,7 @@
     }
 
     /* Icone de Carrinho, cor e tamanho*/
-    .fi-rr-shopping-cart {
+    header .fi-rr-shopping-cart {
         display: none;
     }
 

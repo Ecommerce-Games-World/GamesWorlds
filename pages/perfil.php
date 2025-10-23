@@ -7,7 +7,7 @@
     <title>GamesWorlds</title>
     <link rel="shortcut icon" href="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" type="image/x-icon">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel="stylesheet" href="../css/icons.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" href="../css/desktop.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/mobile.css">
@@ -30,6 +30,113 @@
             */
         }
 
+        .fi {
+
+            color: var(--red);
+        }
+
+        button > span {
+            margin-left: 10px;
+        }
+
+        .userArea {
+            display: grid;
+            grid-template: 1fr / repeat(2, 1fr);
+            justify-content: center;
+
+            width: 300px;
+            height: 200px;
+        }
+
+        .imagePerfil {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 200px;
+            height: 200px;
+            
+            background: var(--gray) url(../Assets/icons/modo-retrato.svg) no-repeat center center;
+            background-size: 100px 100px;
+            
+            border-radius: 50%;
+        }
+        
+        .nomePerfil {
+            align-self: end;
+
+            width: 200px;
+            padding: 10px;
+
+            border-bottom: 1px solid var(--red);
+        }
+
+        .options {
+            display: flex;
+            flex-flow: nowrap row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+
+            width: 85vw;
+            height: 500px;
+            margin-left: -50px;
+        }
+
+        .options a {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+
+            width: 200px;
+
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 1px solid var(--red);
+
+            cursor: pointer;
+        }
+
+        .options a:hover {
+            scale: 1.1;
+            transition: scale .3s ;
+        }
+
+        .options span {
+            margin-left: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 767px) {
+            .userArea {
+                grid-template: repeat(2, 1fr) / 1fr;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                justify-items: center;
+
+                margin: 70px auto;
+            }
+
+            .nomePerfil {
+               text-align: center;
+               margin-top: 15px;
+            }
+
+            .options {
+                flex-flow: nowrap column;
+                justify-items: center;
+
+                margin: 50px 0px 0px 0px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            
+        }
+
     </style>    
 </head>
 <body>
@@ -46,8 +153,8 @@
 
             <i class="fi fi-rr-shopping-cart"></i>
 
-            <!-- Botão que vai para a tela de Login -->
-            <a href=""><button class="loginRegister"><i class="icon_perfil"></i>Perfil</button></a>
+            <!-- Botão que vai para a tela de perfil -->
+            <a href="perfil.php"><button class="loginRegister"><i class="fi fi-rr-user" style="color: var(--white);"></i><span>perfil</span></button></a>
         </div>
     </header>
 
@@ -58,38 +165,35 @@
     <main>
         <section class="perfil">
             <!-- Nome e Foto do Usuário -->
-            <div>
+            <div class="userArea">
                 <div class="imagePerfil">
                     <img src=" " alt="">
-                    <i class="fi fi-rr-mode-portrait"></i>
                 </div>
-                <div>Nome Perfil</div>
+                <p class="nomePerfil">Nome Perfil</p>
             </div>
 
-            <!-- Carrinho -->
-            <div>
-                <i class="fi fi-rr-shopping-cart"></i>Carrinho
-            </div>
-
-            <!-- Informações do Usuário -->
-            <div>
-                <i class="fi fi-rr-info"></i>Informações
-            </div>
-
-            <!-- Endereço do Usuário e troca de Endereço -->
-            <div>
-                <i class="fi fi-rs-postal-address"></i>Endereços
-            </div>
-
-            <!-- Cartões cadastrados -->
-            <div>
-                <i class="fi fi-rr-credit-card"></i>Cartões
-            </div>
-
-            <!-- Sair da Conta -->
-            <div>
-                <i class="fi fi-rr-exit"></i>Sair
-            </div>
+            <section class="options">
+                <!-- Carrinho -->
+                <a href="">
+                    <i class="fi fi-rr-shopping-cart"></i><span>Carrinho</span>
+                </a>
+                <!-- Informações do Usuário -->
+                <a href="">
+                    <i class="fi fi-rr-info"></i><span>Informações</span>
+                </a>
+                <!-- Endereço do Usuário e troca de Endereço -->
+                <a href="">
+                    <i class="fi fi-rs-map-marker-home"></i><span>Endereços</span>
+                </a>
+                <!-- Cartões cadastrados -->
+                <a href="">
+                    <i class="fi fi-rr-credit-card"></i><span>Cartões</span>
+                </a>
+                <!-- Sair da Conta -->
+                <a href="">
+                    <i class="fi fi-rr-exit"></i><span>Sair</span>
+                </a>
+            </section>
         </section>
     </main>
 </body>

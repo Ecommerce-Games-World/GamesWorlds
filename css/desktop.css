@@ -59,7 +59,7 @@ h2 {
 }
 
 /* Fontes para textos */
-p, button, input, label, li, a {
+p, button, input, label, li, a, span {
     font-family: 'PlusJakartaSans';
     font-size: 16px;
 }
