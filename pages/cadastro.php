@@ -1,3 +1,7 @@
+<?php
+    require '../php/usuario_valido.php';
+?>
+    
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -298,7 +302,7 @@
             </div>
 
             <!-- Formulário de Cadastro -->
-            <form action="validar.php" class="formCadastro">
+            <form action="" method="POST" class="formCadastro">
                 <div>
                     <label for="nomeCadastro">Nome</label>
                     <input type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Ronaldo">
@@ -313,7 +317,7 @@
                     <input type="tel" name="telefoneCadastro" id="telefoneCadastro" placeholder="11 1234-5678">
                 </div>
                 <div>
-                    <label for="cep">CEP</label for="">
+                    <label for="cep">CEP</label>
                     <input type="text" name="cep" id="cep" placeholder="12345-678">
                 </div>
                 <div>
@@ -324,12 +328,11 @@
                     <label for="confirmarSenha" style="width: 125px;">Confirmar Senha</label>
                     <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="******">
                 </div>
-                <button class="register">Cadastrar</button>
+                <button type="submit" class="register">Cadastrar</button>
 
                 <!-- Voltar para tela de Login -->
                 <a href="login.php">Já tenho uma conta</a>
             </form>
-            
         </div>
     </div>
 </body>

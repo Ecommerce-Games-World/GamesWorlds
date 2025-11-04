@@ -1,3 +1,7 @@
+<?php
+    require '../php/login_correto.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -259,7 +263,7 @@
             </div>
 
             <!-- Formulário de Login -->
-            <form action="" method="post" class="formLogin">
+            <form action="" method="POST" class="formLogin">
                 <div>
                     <label for="nomeUsuario">Nome</label>
                     <input type="text" name="nomeUsuario" id="nomeUsuario">
@@ -268,7 +272,7 @@
                     <label for="senhaUsuario">Senha</label>
                     <input type="password" name="senhaUsuario" id="senhaUsuario">
                 </div>
-                <button class="entrar">Entrar</button>
+                <button type="submit" name="entrar" class="entrar">Entrar</button>
                 
             </form>
 
