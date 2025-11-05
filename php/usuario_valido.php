@@ -1,7 +1,7 @@
 <?php
     function nomeValido($nome){
         $nomeAceito = false; 
-        if(strlen($nome) <= 8 && strlen($nome) > 5){
+        if(strlen($nome) <= 8 && strlen($nome) >= 5){
             $nomeAceito = true;
         }
 
