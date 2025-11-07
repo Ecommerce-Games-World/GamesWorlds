@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -169,28 +172,28 @@
                 <div class="imagePerfil">
                     <img src=" " alt="">
                 </div>
-                <p class="nomePerfil">Nome Perfil</p>
+                <p class="nomePerfil">Nome Perfil <?php echo "<span>".$_SESSION['nome']."</span>"?></p>
             </div>
 
             <section class="options">
                 <!-- Carrinho -->
-                <a href="">
+                <a href="carrinho.php">
                     <i class="fi fi-rr-shopping-cart"></i><span>Carrinho</span>
                 </a>
                 <!-- Informações do Usuário -->
-                <a href="">
+                <a href="informacao.php">
                     <i class="fi fi-rr-info"></i><span>Informações</span>
                 </a>
                 <!-- Endereço do Usuário e troca de Endereço -->
-                <a href="">
+                <a href="endereco.php">
                     <i class="fi fi-rs-map-marker-home"></i><span>Endereços</span>
                 </a>
                 <!-- Cartões cadastrados -->
-                <a href="">
+                <a href="cartoes.php">
                     <i class="fi fi-rr-credit-card"></i><span>Cartões</span>
                 </a>
                 <!-- Sair da Conta -->
-                <a href="">
+                <a href="sair_conta.php">
                     <i class="fi fi-rr-exit"></i><span>Sair</span>
                 </a>
             </section>

@@ -6,7 +6,6 @@
 
     $conexao = new mysqli($bdhost, $bdUsername, $bdPassword, $bdName);
 
-
     // if($conexao->connect_errno){
     //     echo "erro";
     // }else {
