@@ -1,4 +1,5 @@
 <?php
+    // require '../php/alterar_info.php';
     session_start();
 
     $senhaCriptografada = str_repeat('*' , strlen($_SESSION['senha']));
@@ -176,7 +177,7 @@
         <a href="perfil.php">
             <div class="voltarPerfil colorArrowLeft"><i class="fi fi-rr-arrow-small-left colorArrowLeft"></i></div>
         </a>
-        <form action="" method="post">
+        <form action="../php/alterar_info.php" method="post">
             <div class="emailAlterar">
                 <label for="">Email: 
                     <input type="email" name="emailAlterar" id="emailAlterar" value="<?php echo $_SESSION['email']; ?>">
@@ -194,7 +195,7 @@
             </div>
             <div class="telAlterar">
                 <label for="">Tel:
-                    <input type="tel:" name="telefoneAlterar" id="telefoneAlterar" value="<?php echo $_SESSION['telefone']; ?>">
+                    <input type="tel" name="telefoneAlterar" id="telefoneAlterar" value="<?php echo $_SESSION['telefone'];?>">
                 </label>
             </div>
             <div class="cepAlterar">
@@ -208,8 +209,8 @@
                 </label>
             </div>
 
-            <button type="submit" name="submit" id="enviar_alterar">Enviar</button>
-            <button name="deletar" id="deletar_conta">Deletar Conta</button>
+            <button type="submit" name="enviar_alterar" id="enviar_alterar">Enviar</button>
+            <button type="submit" name="deletar_conta" id="deletar_conta">Deletar Conta</button>
         </form>
     </main>
 </body>

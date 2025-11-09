@@ -12,7 +12,8 @@
 
             $dadosUsuario = $resultado->fetch_assoc();
             session_start();
-
+            
+            $_SESSION['id'] = $dadosUsuario['id'];
             $_SESSION['email'] = $dadosUsuario['email'];
             $_SESSION['nome'] = $dadosUsuario['nome'];
             $_SESSION['senha'] = $dadosUsuario['senha'];
@@ -21,8 +22,10 @@
             $_SESSION['cpf'] = $dadosUsuario['cpf'];
 
             header('location: /Games%20Worlds/GamesWorlds/pages/main.php');
+            exit;
         }else{
             header('location: /Games%20Worlds/GamesWorlds/pages/login.php');
+            exit;
         }
     }
 ?>

@@ -51,7 +51,6 @@
 
         return $telefoneAceito;
     }
-
     
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include_once('config.php');
@@ -73,7 +72,7 @@
         $telefoneAceito = conferirTelefone($telefoneUsuario);
 
         if($nomeAceito && $emailAceito && $senhaAceita && $cepAceito && $telefoneAceito){
-            $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha, telefone, cep) VALUES('$nomeUsuario', '$emailUsuario', '$senhaUsuario', '$telefoneUsuario', '$cep')");
+            $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha, telefone, cep, cpf) VALUES('$nomeUsuario', '$emailUsuario', '$senhaUsuario', '$telefoneUsuario', '$cep', '0')");
 
             header("Location: /Games%20Worlds/GamesWorlds/pages/main.php"); 
             exit;

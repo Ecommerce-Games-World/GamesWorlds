@@ -172,7 +172,7 @@
                 <div class="imagePerfil">
                     <img src=" " alt="">
                 </div>
-                <p class="nomePerfil">Nome Perfil <?php echo "<span>".$_SESSION['nome']."</span>"?></p>
+                <p class="nomePerfil"><?php echo "<span>".ucfirst($_SESSION['nome'])."</span>"?></p>
             </div>
 
             <section class="options">
@@ -193,7 +193,7 @@
                     <i class="fi fi-rr-credit-card"></i><span>Cartões</span>
                 </a>
                 <!-- Sair da Conta -->
-                <a href="sair_conta.php">
+                <a href="../php/sair_conta.php">
                     <i class="fi fi-rr-exit"></i><span>Sair</span>
                 </a>
             </section>

@@ -1,7 +1,7 @@
 <?php
-    require_once '../php/login_correto.php';
+    require '../php/usuario_existe.php';
 ?>
-
+    
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesWorlds</title>
     <link rel="shortcut icon" href="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" type="image/x-icon">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="../css/desktop.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/mobile.css">
@@ -42,6 +41,7 @@
             width: 100%;
             height: 100%;
             min-height: 900px;
+
         }
 
         /* Fundo Lateral */
@@ -57,14 +57,15 @@
             margin: 50px 0 0 7vw;
         }
     
-        /* Div do Login completo */
+        /* Div do cadastro completo */
         .login {
             display: flex;
             flex-flow: nowrap column;
             
-            width: 100vw;
+            width: 50vw;
             max-width: 600px;
-            height: 650px;
+            height: 90vh;
+            max-height: 650px;
             margin: auto;
             
             color: var(--white);
@@ -72,19 +73,14 @@
             border-radius: 30px;
         }
 
-        @media screen and (min-width: 1084px) {
-            .login {
-                margin-right: 10%;
-            }
-        }
-        /* Espaçamento da logo e texto em relação a div */
+        /* Espaçamento entre o texto e imagem em relação a div */
         .espacamentoLogo {
             display: flex;
             justify-content: left;
-            margin: 60px 0px 50px 15%;
+            margin: 60px 0px 30px 15%;
         }
-    
-        /* Organização da logo e texto */
+        
+        /* Posição da logo e texto */
         .containerLogo {
             display: grid;
             grid-template: repeat(2, 1fr) / 50px 1fr;
@@ -95,36 +91,36 @@
         .containerLogo a {
             grid-area: 1 / 1 / 3 / 2;
         }
-
-        /* Formulário de login, alinhando os elementos */
-        .formLogin {
+ 
+        /* Formulário do cadastro, organizando as informações */
+        .formCadastro {
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
             align-items: center;
-            gap: 35px;
-
+            gap: 17px;
             position: relative;
         }
-
-        /* Input do Formulário */
-        .formLogin input {
-            width: 20vw;
-            min-width: 400px;
+        
+        /* Inputs do formulário */
+        .formCadastro input {
+            width: 50vw;
+            max-width: 380px;
             padding: 10px 5px 10px 30px;
-            
+            /* margin: 10px 0; */
+
             border: none;
             border-radius: 20px;
         }
         
         /* Div para fazer um legend improvisado */
-        .formLogin div {
+        .formCadastro div {
             position: relative;
             margin: 15px auto;
         }
 
-        /* Legend Improvisado */
-        .formLogin div > label {
+        /* Legend improvisado */
+        .formCadastro div > label {
             position: absolute;
             bottom: 75%;
             left: 5%;
@@ -139,10 +135,11 @@
             border-radius: 20px;
         }
 
-        /* Botão para enviar o formulário */
-        .entrar {
+        /* Botão para registrar */
+        .recuperar {
             width: 200px;
             padding: 12px;
+            margin: 30px auto 20px auto;
 
             color: var(--white);
             background-color: var(--black);
@@ -151,8 +148,8 @@
             border-radius: 20px;
         }
 
-        /* animação de passar o mouse encima do botão */
-        .entrar:hover {
+        /* Animação ao passar o mouse em cima do botão de registrar */
+        .recuperar:hover {
             color: var(--black);
             background-color: var(--white);
             transition: scale .3s;
@@ -160,14 +157,7 @@
             cursor: pointer;
         }
 
-        /* Organizando a posição do recuperar senha e cadastro */
-        .containerLink {
-            display: flex;
-            flex-flow: nowrap column;
-            margin-top: 60px;
-        }
-
-        /* Personalizando os links */
+        /* Links */
         a {
             color: var(--white);
             text-align: center;
@@ -185,25 +175,25 @@
                 background-color: var(--black);
             }
 
-            /* Organizar todo o site */
-            .container {
-                justify-content: center;
-            }
-
-            /* Lateral */
+            /* Fundo Lateral */
             aside {
                 display: none;
-            }
-
-            /* Div do Login completo */
+            } 
+        
+            /* Div do cadastro completo */
             .login {
-                width: 75vw;
-                min-width: 450px;
+                width: 85vw;
+            }
+        
+            /* Inputs do formulário */
+            .formCadastro input {
+                width: 60vw;
             }
         }
 
-        /* TABLET */
-        @media screen and (min-width: 768px) and (max-width: 1024px) {
+        /* TABLETS */
+        @media screen and (min-width: 768px) and (max-width: 1084px){
+
             /* Fundo Lateral */
             aside {
                 width: 60vw;
@@ -224,7 +214,9 @@
             }
 
             /* Formulário do cadastro, organizando as informações */
-            .formLogin {
+            .formCadastro {
+                display: flex;
+                flex-flow: column nowrap;
                 justify-content: center;
                 align-items: center;
                 gap: 17px;
@@ -232,9 +224,14 @@
             }
 
             /* Inputs do formulário */
-            .formLogin input {
+            .formCadastro input {
                 width: 40vw;
+                min-width: 380px;
                 padding: 10px 5px 10px 30px;
+                /* margin: 10px 0; */
+
+                border: none;
+                border-radius: 20px;
             }
 
             /* Requisitos para o cadastro */
@@ -245,42 +242,39 @@
     </style>
 </head>
 <body>
-    
     <div class="container">
         <!-- Fundo Lateral -->
-        <aside>
+        <aside>        
             <a href="main.php"><img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand"></a>
         </aside>
-        
-        <!-- Div em volta do login -->
+
         <div class="login">
             <div class="espacamentoLogo">
                 <div class="containerLogo">
                     <a href="main.php"><img src="../Assets/images/Hollow Knight Hornet & Needle--pointer--SweezyCursors.png" alt="Hornet" class="storeBrand" style="opacity: 100%;"></a>
                     <h2>Games Worlds</h2>
-                    <p>Faça seu Login</p>
+                    <p>Recupere sua senha </p>
                 </div>
             </div>
 
-            <!-- Formulário de Login -->
-            <form action="" method="POST" class="formLogin">
+            <!-- Formulário de Cadastro -->
+            <form action="" method="POST" class="formCadastro">
                 <div>
-                    <label for="nomeUsuario">Nome</label>
-                    <input type="text" name="nomeUsuario" id="nomeUsuario">
+                    <label for="nomeRecuperar">Nome</label>
+                    <input type="text" name="nomeRecuperar" id="nomeRecuperar" placeholder="Ronaldo">
                 </div>
-                <div>
-                    <label for="senhaUsuario">Senha</label>
-                    <input type="password" name="senhaUsuario" id="senhaUsuario">
-                </div>
-                <button type="submit" name="entrar" class="entrar">Entrar</button>
                 
+                <div>
+                    <label for="emailRecuperar">Email</label>
+                    <input type="email" name="emailRecuperar" id="emailRecuperar" placeholder="abcde@gmail.com">
+                </div>
+                <div>
+                    <label for="telefoneRecuperar">Telefone</label>
+                    <input type="tel" name="telefoneRecuperar" id="telefoneRecuperar" placeholder="11 1234-5678">
+                </div>
+                
+                <button type="submit" name="recuperar" class="recuperar">Recuperar</button>
             </form>
-
-            <!-- Links de cadastro e esqueci a senha -->
-            <div class="containerLink">
-                <a href="cadastro.php">Ainda não tenho uma conta. Cadastrar-se</a>
-                <a href="recuperar_senha.php">Esqueci a Senha.</a>
-            </div>
         </div>
     </div>
 </body>
