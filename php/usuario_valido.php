@@ -51,7 +51,46 @@
 
         return $telefoneAceito;
     }
+
+    function trocaLista($nome, $senha){
+        if(strlen($nome) > 8 || strlen($nome) < 5){
+            $listNomeMin = "listCircle";
+        }else{
+            $listNomeMin = "listDisc";
+        }
+
+        if (strlen($senha) > 10 || strlen($senha) <= 0) {
+            $listSenhaMin = "listCircle";
+        }else{
+            $listSenhaMin = "listDisc";
+        }
+
+        if (!preg_match('/[A-Z]/', $senha)) {
+            $listSenhaMaiusc = "listCircle";
+        }else{
+            $listSenhaMaiusc = "listDisc";
+        }
+
+        if (!preg_match('/[a-z]/', $senha)) {
+            $listSenhaMinusc = "listCircle";
+        }else{
+            $listSenhaMinusc = "listDisc";
+        }
+
+        if (!preg_match('/[0-9]/', $senha)) {
+            $listSenhaNum = "listCircle";
+        }else{
+            $listSenhaNum = "listDisc";
+        }
+
+        if (!preg_match('/[\W_]/', $senha)) {
+            $listSenhaSimb = "listCircle";
+        }else{
+            $listSenhaSimb = "listDisc";
+        }
+    }
     
+    $msgErro = '';
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include_once('config.php');
 
@@ -77,8 +116,43 @@
             header("Location: /Games%20Worlds/GamesWorlds/pages/main.php"); 
             exit;
         }else{
-            header("Location: /Games%20Worlds/GamesWorlds/pages/cadastro.php"); 
-            exit;
+            if(strlen($nomeUsuario) > 8 || strlen($nomeUsuario) < 5){
+            $listNomeMin = "listCircle";
+            }else{
+                $listNomeMin = "listDisc";
+            }
+
+            if (strlen($senhaUsuario) > 10 || strlen($senhaUsuario) <= 0) {
+                $listSenhaMin = "listCircle";
+            }else{
+                $listSenhaMin = "listDisc";
+            }
+
+            if (!preg_match('/[A-Z]/', $senhaUsuario)) {
+                $listSenhaMaiusc = "listCircle";
+            }else{
+                $listSenhaMaiusc = "listDisc";
+            }
+
+            if (!preg_match('/[a-z]/', $senhaUsuario)) {
+                $listSenhaMinusc = "listCircle";
+            }else{
+                $listSenhaMinusc = "listDisc";
+            }
+
+            if (!preg_match('/[0-9]/', $senhaUsuario)) {
+                $listSenhaNum = "listCircle";
+            }else{
+                $listSenhaNum = "listDisc";
+            }
+
+            if (!preg_match('/[\W_]/', $senhaUsuario)) {
+                $listSenhaSimb = "listCircle";
+            }else{
+                $listSenhaSimb = "listDisc";
+            }
+
+            $msgErro = "Erro ao criar conta";
         }
     }  
 ?>

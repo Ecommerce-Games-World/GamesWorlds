@@ -272,8 +272,10 @@
                     <label for="telefoneRecuperar">Telefone</label>
                     <input type="tel" name="telefoneRecuperar" id="telefoneRecuperar" placeholder="11 1234-5678">
                 </div>
-                
+
                 <button type="submit" name="recuperar" class="recuperar">Recuperar</button>
+
+                <?php echo "<p style='margin: 10px 0; padding: 4px; color: var(--black); font-weight: bold;>".$msgErro."</p>";?>
             </form>
         </div>
     </div>

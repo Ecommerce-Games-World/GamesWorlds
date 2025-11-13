@@ -1,7 +1,6 @@
 <?php
     require '../php/usuario_valido.php';
-?>
-    
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -195,7 +194,7 @@
             align-items: center;
             gap: 40px;
 
-            margin-top: 20px;
+            margin-top: 10px;
 
             color: var(--white);
             text-align: center;
@@ -284,10 +283,12 @@
             <div class="required">
                 <h2>Requisitos do Cadastro</h2>
                 <ul>
-                    <li>Nome no minimo 5 caracteres</li>
-                    <li>Senha deve ter simbolos<br>(@, !, $, %, &...) </li>
-                    <li>Senha deve ter letra Maiuscula<br>(A-Z)</li>
-                    <li>Senha deve ter letra Minuscula<br>(a-z)</li>
+                    <li class="<?php echo $listNomeMin?>">Nome no minimo 5 caracteres,<br> maximo 8</li>
+                    <li class="<?php echo $listSenhaSimb?>">Senha deve ter simbolos<br>(@, !, $, %, &...) </li>
+                    <li class="<?php echo $listSenhaMaiusc?>">Senha deve ter letra Maiuscula<br>(A-Z)</li>
+                    <li class="<?php echo $listSenhaMinusc?>">Senha deve ter letra Minuscula<br>(a-z)</li>
+                    <li class="<?php echo $listSenhaNum?>">Senha deve ter números<br>(0-9)</li>
+                    <li class="<?php echo $listSenhaMin?>" style="margin-bottom: 10px;">Senha no maximo 10</li>
                 </ul>
             </div>
         </aside>
@@ -328,8 +329,11 @@
                     <label for="confirmarSenha" style="width: 125px;">Confirmar Senha</label>
                     <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="******">
                 </div>
-                <button type="submit" class="register">Cadastrar</button>
-
+                
+                <?php echo '<p style= " margin: -20px 0; padding: 5px; color: var(--black); font-weight: bold;">'.$msgErro.'</p>'?>
+            
+                
+                <button type="submit" name="register" class="register">Cadastrar</button>
                 <!-- Voltar para tela de Login -->
                 <a href="login.php">Já tenho uma conta</a>
             </form>

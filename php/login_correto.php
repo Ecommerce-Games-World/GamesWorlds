@@ -1,4 +1,6 @@
 <?php
+
+    $msgErro = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         include_once('config.php');
 
@@ -21,11 +23,12 @@
             $_SESSION['cep'] = $dadosUsuario['cep'];
             $_SESSION['cpf'] = $dadosUsuario['cpf'];
 
+            $_SESSION[$perfil_cadastro] = 'perfil';
+
             header('location: /Games%20Worlds/GamesWorlds/pages/main.php');
             exit;
         }else{
-            header('location: /Games%20Worlds/GamesWorlds/pages/login.php');
-            exit;
+            $msgErro = 'Usuario ou senha incorreto.';
         }
     }
 ?>

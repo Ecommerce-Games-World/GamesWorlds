@@ -1,5 +1,6 @@
 <?php
     require_once('config.php');
+    $msgErro = "";
 
     if(isset($_POST['recuperar'])){
         $nome = $_POST['nomeRecuperar'];
@@ -17,8 +18,7 @@
             header('location: /Games%20Worlds/GamesWorlds/pages/nova_senha.php');
             exit;
         }else {
-            header('location: /Games%20Worlds/GamesWorlds/pages/recuperar_senha.php');
-            exit;
+            $msgErro = "Nome, Email ou telefone incorreto.";
         }
     }
 ?>

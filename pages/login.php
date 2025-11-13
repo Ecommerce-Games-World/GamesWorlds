@@ -272,6 +272,7 @@
                     <label for="senhaUsuario">Senha</label>
                     <input type="password" name="senhaUsuario" id="senhaUsuario">
                 </div>
+                <?php echo "<p style= ' margin: -20px 0; padding: 5px; color: var(--black); font-weight: bold;'>".$msgErro."</p>";?>
                 <button type="submit" name="entrar" class="entrar">Entrar</button>
                 
             </form>

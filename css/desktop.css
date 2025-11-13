@@ -169,3 +169,19 @@ main {
     color: white;
     background-color: var(--black);
 }
+
+.cadastro::before {
+    content: "Login/Cadastro";
+}
+
+.perfil::before {
+    content: "Perfil";
+}
+
+.listDisc {
+    list-style-type: disc;
+}
+
+.listCircle {
+    list-style-type: circle;
+}

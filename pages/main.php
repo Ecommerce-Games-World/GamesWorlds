@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -78,6 +81,7 @@
             overflow-x: auto;
             overflow-x: hidden;
         }
+
     </style>
 </head>
 <body>
@@ -96,7 +100,23 @@
             <i class="fi fi-rr-shopping-cart"></i>
 
             <!-- Botão que vai para a tela de login -->
-            <a href="login.php"><button class="loginRegister"><i class="fi fi-rr-user"></i><span>Login/Cadastro</span></button></a>
+            <a href="
+            <?php 
+                if(empty($_SESSION['id'])){
+                    echo 'login.php';
+                }else{
+                    echo 'perfil.php';
+                }
+            ?>
+            "><button class="loginRegister"><i class="fi fi-rr-user"></i><span class="
+            <?php
+                if (empty($_SESSION['id'])) {
+                    echo 'cadastro';
+                } else {
+                    echo ' perfil';
+                }
+            ?>
+            "></span></button></a>
         </div>
     </header>
 
