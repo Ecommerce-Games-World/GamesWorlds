@@ -51,44 +51,6 @@
 
         return $telefoneAceito;
     }
-
-    function trocaLista($nome, $senha){
-        if(strlen($nome) > 8 || strlen($nome) < 5){
-            $listNomeMin = "listCircle";
-        }else{
-            $listNomeMin = "listDisc";
-        }
-
-        if (strlen($senha) > 10 || strlen($senha) <= 0) {
-            $listSenhaMin = "listCircle";
-        }else{
-            $listSenhaMin = "listDisc";
-        }
-
-        if (!preg_match('/[A-Z]/', $senha)) {
-            $listSenhaMaiusc = "listCircle";
-        }else{
-            $listSenhaMaiusc = "listDisc";
-        }
-
-        if (!preg_match('/[a-z]/', $senha)) {
-            $listSenhaMinusc = "listCircle";
-        }else{
-            $listSenhaMinusc = "listDisc";
-        }
-
-        if (!preg_match('/[0-9]/', $senha)) {
-            $listSenhaNum = "listCircle";
-        }else{
-            $listSenhaNum = "listDisc";
-        }
-
-        if (!preg_match('/[\W_]/', $senha)) {
-            $listSenhaSimb = "listCircle";
-        }else{
-            $listSenhaSimb = "listDisc";
-        }
-    }
     
     $msgErro = '';
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
